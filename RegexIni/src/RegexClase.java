@@ -21,7 +21,7 @@ public class RegexClase {
 		return Pattern.matches("^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[@#$%&-]).{8,}$", contra);
 	}
 	public static boolean matriculaInfo(String matricula) {
-		if(Pattern.matches("^[0-9]", matricula)){
+		if(Pattern.matches("^[0-9].*", matricula)){
 			if(Pattern.matches("^[0-9]{4}-[BCDFGHJKLMNPRSTVWXYZ]{3}$", matricula)) {
 				
 				return true;
