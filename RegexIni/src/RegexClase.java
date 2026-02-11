@@ -9,13 +9,13 @@ public class RegexClase {
 		return Pattern.matches("^[A-Za-z0-9\\.]{3,}@[A-Za-z]{3,}\\.[A-Za-z]{2,}", em);
 	}
 	public static boolean numeroLetras(String intro) {
-		return Pattern.matches("[A-Za-z0-9\s*]{1,}", intro);
+		return Pattern.matches("[A-Za-z0-9\s]{1,}", intro);
 	}
 	public static boolean validarTLF(String num) {
-		return Pattern.matches("\\+?[0-9\s*]{8,}", num);
+		return Pattern.matches("\\+?[0-9\s]{8,}", num);
 	}
 	public static boolean passCorrect(String contra) {
-		return Pattern.matches("^(?=.[A-Z])+(?=.[a-z])+(?=.[0-9])+(?=.[@#$%&-])+{8,}", contra);
+		return Pattern.matches("^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[@#$%&-]).{8,}$", contra);
 	}
 	
 }
