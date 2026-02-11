@@ -21,16 +21,19 @@ public class RegexClase {
 		return Pattern.matches("^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[@#$%&-]).{8,}$", contra);
 	}
 	public static boolean matriculaInfo(String matricula) {
-		
-		if(Pattern.matches("^[0-9]{4}-[BCDFGHJKLMNPRSTVWXYZ]{3}$", matricula)) {
-			
-			return true;
+		if(Pattern.matches("^[0-9]", matricula)){
+			if(Pattern.matches("^[0-9]{4}-[BCDFGHJKLMNPRSTVWXYZ]{3}$", matricula)) {
+				
+				return true;
+			}
+			return false;
 		}
 		
 		int index = 0;
 		String codigo;
+		int cantidad = CODIGOS_PROVINCIALES.size();
 		
-		while(index < CODIGOS_PROVINCIALES.size()){
+		while(index < cantidad){
 			
 			codigo = CODIGOS_PROVINCIALES.get(index);
 			if(Pattern.matches("^"+codigo+"-[0-9]{4}-[A-Z]{1,2}$", matricula)) {
